@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management - Car App</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>User Management</h1>
+      <nav>
+        <a href="../cars/index.html">Manage Cars</a>
+        <button id="logoutBtn">Logout</button>
+      </nav>
+    </header>
+    
+    <div class="card">
+      <h2>Users List</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="usersTable">
+          <!-- Users will be loaded here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="users.js"></script>
+</body>
+</html>

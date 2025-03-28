@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Management - Car App</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Car Management</h1>
+      <nav>
+        <button id="logoutBtn">Logout</button>
+      </nav>
+    </header>
+    
+    <div class="card">
+      <h2>Filter Cars</h2>
+      <div class="filter-section">
+        <div class="form-group">
+          <label for="search">Search</label>
+          <input type="text" id="search" placeholder="Make or model">
+        </div>
+        <div class="form-group">
+          <label for="make">Make</label>
+          <select id="make">
+            <option value="">All Makes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="minYear">Min Year</label>
+          <input type="number" id="minYear" placeholder="Min year">
+        </div>
+        <div class="form-group">
+          <label for="maxPrice">Max Price</label>
+          <input type="number" id="maxPrice" placeholder="Max price">
+        </div>
+      </div>
+      <button id="applyFilters" class="btn">Apply Filters</button>
+      <button id="resetFilters" class="btn">Reset</button>
+    </div>
+    
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2>Cars List</h2>
+        <button id="addCarBtn" class="btn btn-success">Add New Car</button>
+      </div>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Owner</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="carsTable">
+          <!-- Cars will be loaded here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Add/Edit Car Modal -->
+  <div id="carModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Add New Car</h2>
+      <form id="carForm">
+        <input type="hidden" id="carId">
+        <div class="form-group">
+          <label for="carMake">Make</label>
+          <input type="text" id="carMake" required>
+        </div>
+        <div class="form-group">
+          <label for="carModel">Model</label>
+          <input type="text" id="carModel" required>
+        </div>
+        <div class="form-group">
+          <label for="carYear">Year</label>
+          <input type="number" id="carYear" required min="1900" max="2099">
+        </div>
+        <div class="form-group">
+          <label for="carColor">Color</label>
+          <input type="text" id="carColor">
+        </div>
+        <div class="form-group">
+          <label for="carPrice">Price</label>
+          <input type="number" id="carPrice" required min="0" step="0.01">
+        </div>
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="cars.js"></script>
+</body>
+</html>
